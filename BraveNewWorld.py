@@ -18,7 +18,8 @@ run_string = False
 run_math = False
 run_user_input = False
 run_lists = False
-run_tuples = True
+run_tuples = False
+run_dictionaries = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -138,6 +139,30 @@ elif run_tuples:
     print(new_line)
     for z in coordinates:
         print(z)
+
+# this module explores dictionaries
+# apparently we use curly brackets for dictionaries in Python.
+# recap: parentheses for tuples, square brackets for lists
+# note - key-value pairing here; the key is the first entry, which matches to the value next to it
+# furthermore, the keys need to be unique, in order to prevent potential mishaps with a key
+#     having different values. I'm quite sure Python throws an exception anyway.
+elif run_dictionaries:
+    sample_dictionary = {
+        "Jan": "January",
+        "Feb": "February",
+        "Mar": "March",
+        "Apr": "April",
+        "May": "May",
+        "Jun": "June",
+        "Jul": "July",
+        "Aug": "August",
+        "Sep": "September",
+        "Oct": "October",
+        "Nov": "November",
+        "Dec": "December"
+    }
+    # this is one method to 
+    print(sample_dictionary["Jan"])
 
 # this is what happens if no modules are set to true
 else:

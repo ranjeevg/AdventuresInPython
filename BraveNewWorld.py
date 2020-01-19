@@ -22,7 +22,8 @@ run_tuples = False
 run_dictionaries = False
 run_while_loops = False
 run_for_loops = False
-run_functions = True
+run_functions = False
+run_2D_arrays = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -205,10 +206,33 @@ elif run_functions:
         print("Hello Python Function Space!" + new_line)
         for index2 in range(1, 16):
             print(str(index2) + new_line)
-        print("Bahut bahut dhanyavaad")
+        return("Bahut bahut dhanyavaad")
 
     # ok, so we've defined a function. Calling it is fairly easy:
-    first_python_function()
+    print(first_python_function())
+
+# this section explores 2D arrays in Python
+elif run_2D_arrays:
+    # let's use a this 2D array to define a 3x3 invertible matrix
+    two_dim_array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 1]
+    ]
+    # python, unlike Xamarin, thankfully, indexes rows first and then columns
+    # also, nested loops
+    # this prints out the matrix that we printed before, in Octave format
+    for j in range(3):
+        row = "["
+        for k in range(3):
+            row += str(two_dim_array[j][k])
+            if k < 2:
+                row += ", "
+            elif k == 2:
+                row += "]"
+                if j != 2:
+                    row += ","
+                print(row)
 
 # this is what happens if no modules are set to true
 else:

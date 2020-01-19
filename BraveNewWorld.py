@@ -20,7 +20,8 @@ run_user_input = False
 run_lists = False
 run_tuples = False
 run_dictionaries = False
-run_while_loops = True
+run_while_loops = False
+run_for_loops = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -179,7 +180,23 @@ elif run_while_loops:
         print(i)
         i += 1
     print("Our loop's done, thanks :)")
-    
+
+# so there are some things that I didn't know about for loops
+elif run_for_loops:
+    # this is a way to use the foreach syntax to cover a predetermined range of numbers
+    for index in range(10):
+        # the range method returns a list of all whole numbers below the number inserted.
+        # as such, range(10) returns a list of the numbers 0 through 9.
+        print(index)
+    print("For loop done, guys")
+    print(new_line)
+
+    # another application of the range method is to specify a starting number
+    # for example, range(2, 10) returns the numbers 2 through 9
+    for index in range(1,10):
+        print(index)
+    print("Modified-range for loop done, guys")
+
 # this is what happens if no modules are set to true
 else:
     print("Please select a module to work on")

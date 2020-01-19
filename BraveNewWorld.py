@@ -21,7 +21,8 @@ run_lists = False
 run_tuples = False
 run_dictionaries = False
 run_while_loops = False
-run_for_loops = True
+run_for_loops = False
+run_functions = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -196,6 +197,18 @@ elif run_for_loops:
     for index in range(1,10):
         print(index)
     print("Modified-range for loop done, guys")
+
+# so I missed a section about functions, working on that here
+elif run_functions:
+    # 'def function_name(arguments):
+    def first_python_function():
+        print("Hello Python Function Space!" + new_line)
+        for index2 in range(1, 16):
+            print(str(index2) + new_line)
+        print("Bahut bahut dhanyavaad")
+
+    # ok, so we've defined a function. Calling it is fairly easy:
+    first_python_function()
 
 # this is what happens if no modules are set to true
 else:

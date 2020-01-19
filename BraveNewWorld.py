@@ -23,7 +23,8 @@ run_dictionaries = False
 run_while_loops = False
 run_for_loops = False
 run_functions = False
-run_2D_arrays = True
+run_2D_arrays = False
+run_try_except = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -234,6 +235,26 @@ elif run_2D_arrays:
                     row += ","
                 print(row)
 
+# try / except statements - essentially try/catch by another name
+elif run_try_except:
+    try:
+        print(int(input("Enter a number here: ")))
+    except:
+        print("Invalid input")
+    # this inevitably happens at the end, after either the try or except conditions have been met
+    finally:
+        print("This is the final step")
+
+    # a try-except statement with specified conditions to check for
+    #   here, we have a type-conversion error in the try statement that we allow to run, but it catches a
+    #   divide-by-zero
+    try:
+        value = int(10 / (0.001 - 0.001))
+        print(value)
+        print(int(input("Enter another value here: ")))
+    except ZeroDivisionError as err:
+        print(err)
+
 # this is what happens if no modules are set to true
 else:
-    print("Please select a module to work on")
+    print("Please select a module to work on by changing the appropriate booleans")

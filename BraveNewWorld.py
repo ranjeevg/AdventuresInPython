@@ -19,7 +19,8 @@ run_math = False
 run_user_input = False
 run_lists = False
 run_tuples = False
-run_dictionaries = True
+run_dictionaries = False
+run_while_loops = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -161,9 +162,24 @@ elif run_dictionaries:
         "Nov": "November",
         "Dec": "December"
     }
-    # this is one method to 
+    # this is one method to access elements in a dictionary - reference the key directly
     print(sample_dictionary["Jan"])
+    # we could also use the get method, as such:
+    print(sample_dictionary.get("Oct"))
+    # keep in mind that you reference the key, not the value
+    # the get method is also overloaded so that you can specify a message if the key doesn't match
+    #   with any values in the dictionary
+    print(sample_dictionary.get("SATAN", "Entry not found"))
+    # here, there's no entry with a key of "SATAN", so it returns "Entry not found"
 
+# this is fairly straightforward - while loops
+elif run_while_loops:
+    i = 1
+    while i < 10:
+        print(i)
+        i += 1
+    print("Our loop's done, thanks :)")
+    
 # this is what happens if no modules are set to true
 else:
     print("Please select a module to work on")

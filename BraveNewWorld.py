@@ -24,7 +24,9 @@ run_while_loops = False
 run_for_loops = False
 run_functions = False
 run_2D_arrays = False
-run_try_except = True
+run_try_except = False
+run_io = False
+run_classes = True
 
 # using if, elif and else statements to control the flow of the program
 
@@ -255,6 +257,74 @@ elif run_try_except:
     except ZeroDivisionError as err:
         print(err)
 
-# this is what happens if no modules are set to true
+# playing around with I/O
+elif run_io:
+    try:
+        # open opens the file. the second argument specifies the file open type
+        file_contents = open("helloWorld.txt", "r+")
+        # "r" stands for 'read', "w" stands for 'write', "a" stands for 'append',
+        #    "r+" stands for 'read and write'
+
+        # now, we want to check if the file is readable - the .readable method returns a bool accordingly
+        print("File readable? : " + str(file_contents.readable()))
+
+        # reaading the lines and adding them to a list
+        line_list = file_contents.readlines()
+        print(line_list)
+
+        # reading a single line, moving the cursor to the next line
+        print(file_contents.readline())
+
+        # now, we want to actually read the file
+        print(file_contents.read())
+
+        # writing to the file
+        file_contents.write("Ave Lucifer\n")
+
+        # of course, we want to close the file when we're done
+        file_contents.close()
+        print("File read successfully")
+
+        # creating a new file programmatically - do not use r+, as it tries to read the file before
+        #    it's been created
+        html_example = open("example.html", "w")
+        html_example.write("<p>This is an HTML file</p>")
+        html_example.close()
+
+    # in the case that the file doesn't exist
+    except FileNotFoundError as err:
+        print(err)
+
+# this section deals with classes
+elif run_classes:
+    # note: classes are best defined in their own separate files and then imported, but, for the sake of this
+    #   exercise, I'm going to define a class in this file
+    # we would import them as such: from <filename> import <class>
+    class TestClass:
+        # this next function is a constructor, called __init__. 2 underscores, mind you.
+        # also, you need to specify the self argument here.
+        def __init__(self, name, favorite_food):
+            self.name = name
+            self.favorite_food = favorite_food
+
+    # creating an object of the TestClass class
+    Object = TestClass("Ranjeev Grewal", "Mutton biryani")
+    print(Object.name + ", " + Object.favorite_food)
+
+    # you declare that a class inherits from another in the following syntax:
+    # class ChildClass(ParentClass): # etc.
+    class FirstInheritedClass(TestClass):
+        def this_is_a_method(self):
+            try:
+                return self.name
+            except Exception as err2:
+                print(err2)
+
+    # instantiating a FirstInheritedClass object
+    first_inherited_object = FirstInheritedClass("Ranjeev", "Biryani")
+    print(first_inherited_object.this_is_a_method())
+
+# this is what happens if no booleans that control the program flow are set to true
 else:
-    print("Please select a module to work on by changing the appropriate booleans")
+    print("Please select a section of the code to work on by changing the appropriate booleans, starting at line "
+          + "17 of the program.")

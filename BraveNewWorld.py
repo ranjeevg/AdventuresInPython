@@ -144,6 +144,7 @@ elif run_tuples:
     x = input("please enter the x-coordinate of your point: ")
     y = input("please enter the y-coordinate of your point: ")
     coordinates = (x, y)  # apparently, we use parentheses instead of square brackets for tuples
+# update from the future: OF COURSE we do. Python relies on that convention to distinguish the two because of the dynamic variable types.
     print(new_line)
     for z in coordinates:
         print(z)

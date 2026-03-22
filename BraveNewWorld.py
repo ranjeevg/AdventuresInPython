@@ -43,7 +43,6 @@ if run_string:
 
     print(new_line + a.upper() + new_line + b.upper() + new_line + c.upper() + new_line + d.upper() + new_line)
     total_string = new_line + a.upper() + new_line + b.upper() + new_line + c.upper() + new_line + d.upper() + new_line
-    print(total_string + "PO DA PATTI MYRE" + new_line)  # because why not
 
 # this branch of the program deals with the math library
 elif run_math:
